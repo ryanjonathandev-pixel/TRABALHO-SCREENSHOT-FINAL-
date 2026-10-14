@@ -1,0 +1,30 @@
+html, body {
+    background-image: url("../assets/monster/imagem1.png");
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: trocarImagem 0.75s steps(1) infinite;
+}
+
+@keyframes trocarImagem {
+    0%   { background-image: url("../assets/monster/imagem1.png"); }
+    25%  { background-image: url("../assets/monster/imagem2.png"); }
+    50%  { background-image: url("../assets/monster/imagem3.png"); }
+    75%  { background-image: url("../assets/monster/imagem2.png"); }
+}
+
+img:not(.imagem-monstro) {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  position: absolute;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+img:not(.imagem-monstro):hover {
+  opacity: 0.5;
+}

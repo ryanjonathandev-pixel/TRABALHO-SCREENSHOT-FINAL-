@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  height: 100vh;
+  scrollbar-width: none; 
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#cena {
+   background-image: url('../assets/jogo/backroom.jpe');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   overflow: hidden;
+   position: relative;
+   width: 100%;
+   height: 100%;
+}
+
+#escuro {
+    position: fixed;
+    z-index: 3;
+    inset: 0;
+    background: black;
+    pointer-events: none;
+}
+
+img:not(.imagem-monstro) {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  position: absolute;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+img:not(.imagem-monstro):hover {
+  opacity: 0.5;
+}
+
+.seguidor {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ff5722;
+  border-radius: 50%;
+  pointer-events: none; 
+  transform: translate(-50%, -50%);
+}
+
+#escuro {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* comandos relacionados aos olhos */
+
+.olho {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 50px;
+    z-index: 1;
+    animation: eye 1s steps(1) infinite;
+}
+
+
+@keyframes eye {
+
+    0% {
+      background-image: url('../assets/EYES/eyePeace2.png');
+    }
+
+    25% {
+      background-image: url('../assets/EYES/eyePeace1.png');
+    }
+
+    75% {
+      background-image: url('../assets/EYES/eyePeace2.png');
+    }
+
+    100% {
+      background-image: url('../assets/EYES/eyePeace1.png');
+    }
+}
+
+#contador-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 4;
+}
+
+
+.monstro {
+  width: 100px;
+  height: 150px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  overflow: visible;
+  top: 25%;
+}
+
+.imagem-monstro {
+  width: 200px;
+  height: 300px;
+  object-fit: contain;
+
+  margin-left: 25%;
+  pointer-events: none;
+  animation: respirarSutil 2.5s steps(8) infinite;
+}
+
+@keyframes respirarSutil {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+            }
+            50% {
+                /* Deslocamento micro de 3.5px para ficar sutil com 8 frames */
+                transform: translateY(-3.5px) scale(1.012);
+            }
+        }
