@@ -1,7 +1,7 @@
 const CENA = document.getElementById("cena");
 
 function iniciarContagem() {
-    var intervalo = 5000 + Math.random() * 1;
+    var intervalo = 5000 + Math.random() * 1000;
 
     setTimeout(function() {
         criarMonstro();

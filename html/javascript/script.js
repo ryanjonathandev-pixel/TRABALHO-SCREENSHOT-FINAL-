@@ -17,13 +17,13 @@ quitButton.addEventListener("click", function () {
 
 const seguidor = document.querySelector('.seguidor');
 
-document.addEventListener('mousemove', (e) => {
+/*document.addEventListener('mousemove', (e) => {
   const x = e.clientX;
   const y = e.clientY;
 
   seguidor.style.left = `${x}px`;
   seguidor.style.top = `${y}px`;
-});
+});*/
 
 
 
