@@ -164,3 +164,21 @@ function abrirJogo(id) {
     localStorage.setItem('jogadorAtual', JSON.stringify(jogador));
     location.href = 'GAME.html';
 }}
+
+
+
+
+/*Paralaxx*/
+
+const body = document.body;
+body.style.transition = "background-position 0.4s ease-out";
+
+window.addEventListener("mousemove", function(e) {
+  const centroX = window.innerWidth / 2;
+  const centroY = window.innerHeight / 2;
+  const sensibilidade = 0.03;
+  const moverX = 50 - ((centroX - e.clientX) * sensibilidade);
+  const moverY = 50 - ((centroY - e.clientY) * sensibilidade);
+  body.style.backgroundPosition = moverX + "% " + moverY + "%";
+});
+

@@ -141,3 +141,30 @@ img:not(.imagem-monstro):hover {
                 transform: translateY(-3.5px) scale(1.012);
             }
         }
+
+
+/* aviso */
+
+#mensagemInicio {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    z-index: 10000;
+
+    animation: piscar 0.8s 15;
+}
+
+@keyframes piscar {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}

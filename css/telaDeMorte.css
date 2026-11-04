@@ -1,30 +1,66 @@
 html, body {
-    background-image: url("../assets/monster/imagem1.png");
+    background-color: black;
     margin: 0;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    animation: trocarImagem 0.75s steps(1) infinite;
+    overflow: hidden;
 }
 
-@keyframes trocarImagem {
-    0%   { background-image: url("../assets/monster/imagem1.png"); }
-    25%  { background-image: url("../assets/monster/imagem2.png"); }
-    50%  { background-image: url("../assets/monster/imagem3.png"); }
-    75%  { background-image: url("../assets/monster/imagem2.png"); }
+#fade-in-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: aparecer2 4s ease-in-out forwards;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-img:not(.imagem-monstro) {
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  position: absolute;
-  z-index: 9999;
-  cursor: pointer;
+#fade-in-image2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: aparecer1 7s ease-in-out 3s forwards;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
-img:not(.imagem-monstro):hover {
-  opacity: 0.5;
+@keyframes aparecer1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes aparecer2 {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 80% {
+        opacity: 1;
+    }
+}
+
+img:not(.imagem-monstro):not(#fade-in-image):not(#fade-in-image2) {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    position: absolute;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+img:not(.imagem-monstro):not(#fade-in-image):not(#fade-in-image2):hover {
+    opacity: 0.5;
 }

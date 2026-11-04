@@ -2,11 +2,16 @@ body {
     margin: 0;  
     min-height: 100vh;
     font-family: 'MinhaFonte', system-ui;
+
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
   
     background-image: url('../assets/background.png');  
-    background-repeat: no-repeat;  
-    background-position: right;  
-    background-size: cover;  
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-size: 120% max(120vh, 700px); 
     background-attachment: fixed;
 }
 
@@ -39,8 +44,9 @@ body {
 
 .boddy {
     width:500px;
-    padding-top: 50px;
+    padding-top: 25px;
     padding-left: 10%;
+    padding-bottom: 50px;
 }
 
 input {
@@ -98,42 +104,13 @@ option {
 
 /*barra de mavegaçao*/
 
-header {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    padding-top: 0px;
-    justify-content: center;
-    position: fixed;
-}
-
-nav {
-    width: 200vw;
-    height: 40px;
-    background-color: #000000;
-    display: flex;
-    justify-content: space-around;
-}
-
 ul {
     display: flex;
     list-style-type: none;
     padding: 0px;
 }
 
-li {
-  padding: 12px;
-}
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
-a:hover {
-    color: rgb(100, 100, 100);
-    transition: 0.5s;
-}
 
 .blood:hover {
     color: rgb(255, 0, 0);
@@ -142,9 +119,10 @@ a:hover {
 
 img.logo {
     width: 35vw;
-    min-width: 500px;
+    min-width: 400px;
     height: auto;
-    margin-top: 100px;  
+    margin-top: 10px;
+    transform: translate(-10%, 0);
 }
 
 /*espaçamento*/
@@ -153,7 +131,7 @@ img.logo {
     width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
 }
 
 section {
@@ -186,3 +164,5 @@ sec {
     justify-content: space-between;
     width: 100%;
 }
+
+

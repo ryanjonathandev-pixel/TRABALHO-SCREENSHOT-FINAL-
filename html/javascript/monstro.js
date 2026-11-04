@@ -4,9 +4,13 @@ function iniciarContagem() {
     var intervalo = 5000 + Math.random() * 1000;
 
     setTimeout(function() {
-        criarMonstro();
-    if (!document.querySelector(".monstro")) {
-        iniciarContagem();}
+
+        if (document.querySelectorAll(".monstro").length < 10) {
+            criarMonstro();
+        }
+
+        iniciarContagem();
+
     }, intervalo);
 }
 
@@ -27,15 +31,14 @@ function criarElementoMonstro() {
 
     const imagemMonstro = document.createElement("img");
     imagemMonstro.src = "javascript/img-gold/gold.webp";
-    imagemMonstro.classList.add("imagem-monstro"); 
+    imagemMonstro.classList.add("imagem-monstro");
+
     elementoMonstro.appendChild(imagemMonstro);
 
     return elementoMonstro;
 }
 
-if (!document.querySelector(".monstro")) {
-    iniciarContagem();
-}
+iniciarContagem();
 
 
 function posicionarElementoM(elemento) {
@@ -46,22 +49,19 @@ function posicionarElementoM(elemento) {
     elemento.style.top = `${posicaoY}%`;
 }
 
-/* monstro morte */
 
+/* monstro morte */
 
 document.addEventListener("mouseover", function(event) {
     if (event.target && event.target.classList.contains("monstro")) {
         console.log("O jogador tocou no monstro! Redirecionando...");
-        window.location.href = 'deathScreen.html';
         atualizarLocal();
+        window.location.href = 'deathScreen.html';
     }
 });
 
 
-
 /* espaço pra espantar monstro */
-
-
 
 document.addEventListener("keydown", function(evento) {
     if (evento.code === "Space") {
@@ -71,7 +71,6 @@ document.addEventListener("keydown", function(evento) {
 
         if (monstro) {
             monstro.remove();
-            iniciarContagem();
         }
     }
 });
@@ -91,3 +90,16 @@ function atualizarLocal() {
 
     localStorage.setItem("personagens", JSON.stringify(person));
 }
+
+
+/* AVISO */
+
+window.addEventListener("load", function() {
+
+    const mensagem = document.getElementById("mensagemInicio");
+
+    setTimeout(function() {
+        mensagem.remove();
+    }, 12000);
+
+});
