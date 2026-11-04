@@ -5,7 +5,7 @@ function iniciarContagem() {
 
     setTimeout(function() {
 
-        if (document.querySelectorAll(".monstro").length < 10) {
+        if (document.querySelectorAll(".monstro").length < 50) {
             criarMonstro();
         }
 
